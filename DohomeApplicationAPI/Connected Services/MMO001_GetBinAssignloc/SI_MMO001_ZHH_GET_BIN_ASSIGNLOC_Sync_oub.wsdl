@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:p1="https://dohome.co.th/HandheldOutound/MM" xmlns:rfc="urn:sap-com:document:sap:rfc:functions" name="SI_MMO001_ZHH_GET_BIN_ASSIGNLOC_Sync_oub" targetNamespace="https://dohome.co.th/HandheldOutound/MM" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation />
+  <wsp:UsingPolicy wsdl:required="true" />
+  <wsp:Policy wsu:Id="OP_SI_MMO001_ZHH_GET_BIN_ASSIGNLOC_Sync_oub" />
+  <wsdl:types>
+    <xsd:schema xmlns="urn:sap-com:document:sap:rfc:functions" targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="ZHH_GET_BIN_ASSIGNLOC">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="0" name="I_BINCODE">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="20" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="I_LGORT">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="4" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="I_MATNR">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="18" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="I_WERKS">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="4" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="O_ASSIGNLOC">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="rfc:ZMM_ASSIGNLOC" />
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZHH_GET_BIN_ASSIGNLOC.Response">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="0" name="O_ASSIGNLOC">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="rfc:ZMM_ASSIGNLOC" />
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ZMM_ASSIGNLOC">
+        <xsd:annotation>
+          <xsd:documentation>Assign Location</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="MANDT">
+            <xsd:annotation>
+              <xsd:documentation>Client</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="3" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="MATERIAL">
+            <xsd:annotation>
+              <xsd:documentation>Article Number</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="18" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="UNITOFMEASURE">
+            <xsd:annotation>
+              <xsd:documentation>Base Unit of Measure</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="3" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="BIN_CODE">
+            <xsd:annotation>
+              <xsd:documentation>Bin Code</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="20" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="LOCTYPE">
+            <xsd:annotation>
+              <xsd:documentation>SLoc.Type</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="1" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="WERKS">
+            <xsd:annotation>
+              <xsd:documentation>Site</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="4" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="STORAGE_LOC">
+            <xsd:annotation>
+              <xsd:documentation>Storage Location</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="4" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="DEFAULT_BIN">
+            <xsd:annotation>
+              <xsd:documentation>Default bin</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="1" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="MAXSTOCK">
+            <xsd:annotation>
+              <xsd:documentation>จำนวนเก็บสูงสุด</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:decimal">
+                <xsd:totalDigits value="10" />
+                <xsd:fractionDigits value="0" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ROWORDER">
+            <xsd:annotation>
+              <xsd:documentation>ลำดับ</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:decimal">
+                <xsd:totalDigits value="5" />
+                <xsd:fractionDigits value="0" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="PUTQTY">
+            <xsd:annotation>
+              <xsd:documentation>จำนวนขาวาง</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:decimal">
+                <xsd:totalDigits value="5" />
+                <xsd:fractionDigits value="0" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="PUTLEVEL">
+            <xsd:annotation>
+              <xsd:documentation>จำนวนชั้นที่วาง</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:decimal">
+                <xsd:totalDigits value="5" />
+                <xsd:fractionDigits value="0" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="MINSTOCK">
+            <xsd:annotation>
+              <xsd:documentation>จำนวนเก็บต่ำสุด</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:decimal">
+                <xsd:totalDigits value="10" />
+                <xsd:fractionDigits value="0" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="SPANTYPE">
+            <xsd:annotation>
+              <xsd:documentation>Span Type.</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="2" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="SPANWIDE">
+            <xsd:annotation>
+              <xsd:documentation>Span Wide.</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:decimal">
+                <xsd:totalDigits value="5" />
+                <xsd:fractionDigits value="0" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="rfc.ZHH_GET_BIN_ASSIGNLOC.Input">
+    <wsdl:documentation />
+    <wsdl:part name="parameters" element="rfc:ZHH_GET_BIN_ASSIGNLOC" />
+  </wsdl:message>
+  <wsdl:message name="rfc.ZHH_GET_BIN_ASSIGNLOC.Output">
+    <wsdl:documentation />
+    <wsdl:part name="parameters" element="rfc:ZHH_GET_BIN_ASSIGNLOC.Response" />
+  </wsdl:message>
+  <wsdl:portType name="SI_MMO001_ZHH_GET_BIN_ASSIGNLOC_Sync_oub">
+    <wsdl:documentation />
+    <wsdl:operation name="SI_MMO001_ZHH_GET_BIN_ASSIGNLOC_Sync_oub">
+      <wsdl:documentation />
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_SI_MMO001_ZHH_GET_BIN_ASSIGNLOC_Sync_oub" />
+      </wsp:Policy>
+      <wsdl:input message="p1:rfc.ZHH_GET_BIN_ASSIGNLOC.Input" />
+      <wsdl:output message="p1:rfc.ZHH_GET_BIN_ASSIGNLOC.Output" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SI_MMO001_ZHH_GET_BIN_ASSIGNLOC_Sync_oubBinding" type="p1:SI_MMO001_ZHH_GET_BIN_ASSIGNLOC_Sync_oub">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <wsdl:operation name="SI_MMO001_ZHH_GET_BIN_ASSIGNLOC_Sync_oub">
+      <operation soapAction="http://sap.com/xi/WebService/soap1.1" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <wsdl:input>
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </wsdl:input>
+      <wsdl:output>
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SI_MMO001_ZHH_GET_BIN_ASSIGNLOC_Sync_oubService">
+    <wsdl:port name="HTTP_Port" binding="p1:SI_MMO001_ZHH_GET_BIN_ASSIGNLOC_Sync_oubBinding">
+      <address location="http://sappodev.dohome:50000/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=MobileApp_DEV120&amp;receiverParty=&amp;receiverService=&amp;interface=SI_MMO001_ZHH_GET_BIN_ASSIGNLOC_Sync_oub&amp;interfaceNamespace=https%3A%2F%2Fdohome.co.th%2FHandheldOutound%2FMM" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </wsdl:port>
+    <wsdl:port name="HTTPS_Port" binding="p1:SI_MMO001_ZHH_GET_BIN_ASSIGNLOC_Sync_oubBinding">
+      <address location="https://sappodev.dohome:50001/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=MobileApp_DEV120&amp;receiverParty=&amp;receiverService=&amp;interface=SI_MMO001_ZHH_GET_BIN_ASSIGNLOC_Sync_oub&amp;interfaceNamespace=https%3A%2F%2Fdohome.co.th%2FHandheldOutound%2FMM" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
